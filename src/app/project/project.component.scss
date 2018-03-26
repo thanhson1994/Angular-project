@@ -10,25 +10,26 @@
     padding-top: 30px;
 }
 
-// .nk-header {
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     right: 0;
-//     z-index: 1000;
-// }
-// .nk-menu {
-//     background-color: transparent;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-// }
+.nk-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+.nk-menu {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
 .menu-right ul li a {
     font-weight: 500;
+    text-decoration: none;
     text-transform: uppercase;
     font-size: 0.93rem;
-    color: #bfbfbf;
+    color: #696969;
     display: block;
     padding: .5rem 1rem;
 }
@@ -59,6 +60,7 @@
     z-index: 1;
     color: #fff;
     opacity: unset !important;
+    margin-top: 40px;
 }
 
 .text-subtitle h2 {
@@ -90,7 +92,7 @@
 
 .clorWhite {
     color: #fff;
-    /* display: block; */
+
 }
 
 .dowload button {
@@ -120,13 +122,7 @@
     border: 1px solid #444444;
 }
 
-// .angle-down a i {
-//     color: #fff !important;
-//     font-size: 20px;
-//     width: 50px;
-//     height: 50px;
-//     line-height: 50px;
-// }
+
 // ------------------------------------
 .bg-white {
     width: 100%;
@@ -139,6 +135,7 @@
     font-weight: 700;
     text-align: center;
     margin-top: 70px;
+    font-size: 2.6rem;
 }
 
 .bg-white p {
@@ -301,6 +298,7 @@
 
 .project-item .project-item-text {
     justify-content: center;
+    align-items: center;
     position: absolute;
     display: flex;
     color: #fff;
@@ -310,14 +308,15 @@
     right: 0;
     bottom: 0;
     opacity: 0;
-    padding: 50px;
+
     transition: opacity 0.5s, background-color 0.5s;
 }
 
 .project-item .project-item-text-h2 {
     color: #fff;
     font-size: 25px;
-    margin-bottom: 18px;
+    // margin-bottom: 18px;
+    text-align: center;
     transform: translateY(10px);
     opacity: 0;
     transition: transform 0.4s 0.2s, opacity 0.4s 0.2s;
@@ -485,7 +484,7 @@
 
 // Start Contact Info
 .contact-info {
-    background-color: grey;
+    background-color:#e2e2e2;
 }
 
 .contact-info-h-100 {
