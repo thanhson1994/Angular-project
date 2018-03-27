@@ -1,3 +1,7 @@
+<div class="form-title text-center">
+  <h3> ACCOUNT LOGIN </h3>
+</div>
+
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3">
   <div class="form-group row">
     <label class="col">
@@ -5,31 +9,38 @@
       <input type="email" class="form-control" formControlName="username">
     </label>
   </div>
+  <!-- <div class="col alert alert-danger" role="alert" *ngIf="form.get('username').hasError('required')) &&
+      form.get('username').touched">
+    This filed is required an email
+  </div> -->
 
-  <div class="col alert alert-danger" role="alert"  *ngIf="form.hasError('invalidusername', ['username']) &&
+
+  <div class="col alert alert-danger" role="alert" *ngIf="form.hasError('invalidusername', ['username']) &&
       form.get('username').touched">
     Invalid Username!
   </div>
-  <div formGroupName="pw">
-    <div class="form-group row">
-      <label class="col">
-        Password
-        <input type="password" class="form-control" formControlName="password">
-      </label>
-    </div>
-    <div class="form-group row">
-      <label class="col">
-        Confirm Password
-        <input type="password" class="form-control" formControlName="confirmPassword">
-      </label>
-    </div>
-    <div class="col alert alert-danger" role="alert"  *ngIf="form.hasError('passwordnotmatch', ['pw']) &&
-      form.get('pw').touched && isSpecial">
-    Password does not match
+
+  <div class="col alert alert-danger" role="alert" *ngIf="form.get('username').hasError('email') &&
+      form.get('username').touched">
+    It's not an email. Example: example@gmai.com
   </div>
+
+
+  <div class="form-group row">
+    <label class="col">
+      Password
+      <input type="password" class="form-control" formControlName="password">
+    </label>
   </div>
+  <div class="col alert alert-danger" role="alert" *ngIf="form.get('password').hasError('minLength') &&
+      form.get('password').touched">
+    Your password is too short!
+  </div>
+
+
+
   <div class="form-group">
-    <button class="btn btn-info" type="submit">Submit</button>
+    <button class="btn btn-info" type="submit" [disabled]="form.invalid" (click)="onSuccess()">Submit</button>
 
   </div>
 </form>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { LoginFormComponent } from '../login-form/login-form.component';
 import { HostListener, Inject } from '@angular/core';
+import { LoginComponent } from '../login/login.component';
+import { RegisterFormComponent } from '../register-form/register-form.component';
 
 declare const window: any;
 
@@ -11,12 +13,13 @@ declare const window: any;
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.scss']
 })
+
 export class ProjectComponent implements OnInit {
   active;
   constructor(public dialog: MatDialog) {}
 
 
-    openDialog(): void {
+    openLoginForm(): void {
       const dialogRef = this.dialog.open(LoginFormComponent, {
         width: '650px',
         height: '400px',
@@ -29,6 +32,17 @@ export class ProjectComponent implements OnInit {
       });
 
     }
+    openRegisterForm(): void {
+      const registerFrom = this.dialog.open(RegisterFormComponent, {
+        width: '650px',
+        height: ' 400px',
+      });
+      registerFrom.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+      });
+    }
+
+
 
 
 

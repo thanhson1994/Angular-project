@@ -1,4 +1,4 @@
-<!-- <div class="best-projects text-center">
+<div class="best-projects text-center">
 
 
   <div class="project">
@@ -15,7 +15,7 @@
 
         <div class=" col-md-6 col-lg-4 project-item " *ngFor="let project of bestProject">
           <a href="#" class="project-item-link"></a>
-          <div class="project-item-images item-image-1" style="background-image: url(project.img?.url);">  </div>
+          <div class="project-item-images item-image-1" [style.backgroundImage]="getBackgroundImage(project)"></div>
           <div class="project-item-text text-center">
             <div>
               <h2 class="project-item-text-h2">{{ project.h2 }}</h2>
@@ -25,12 +25,9 @@
           </div>
         </div>
 
-
-
-
       </div>
     </div>
     <div class="bp-h-95"></div>
   </div>
 
-</div> -->
+</div>

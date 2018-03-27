@@ -1,0 +1,43 @@
+<div class="container-fluid">
+
+  <div class="col-4 mx-auto form-all">
+
+    <div class="form-bordertop"></div>
+    <div class="form-main">
+
+      <div class="form-title">
+        <h3> ACCOUNT LOGIN </h3>
+      </div>
+      <form action="" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <input class="form-control" type="text" name="username" id="username" placeholder="Username" formControlName="username">
+
+        </div>
+        <div class="col alert alert-danger" role="alert"  *ngIf="formLogin.hasError('invalidusername', ['username']) &&
+      formLogin.get('username').touched">
+    Invalid Username!
+  </div>
+        <br>
+        <div class="input-group">
+          <input class="form-control" type="password" name="pass" id="pass" placeholder="Password" formControlName="password">
+
+        </div>
+        <div class="row form-bottom">
+          <div class="col form-bot-l">
+            <a href="#">Forgot Password?</a>
+          </div>
+          <div class="col form-bot-r">
+            <button type="submit" class="btn btn-block">
+              LOGIN
+            </button>
+          </div>
+        </div>
+
+
+      </form>
+    </div>
+    <div class="form-footer"></div>
+
+  </div>
+
+</div>
