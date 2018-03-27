@@ -3,32 +3,45 @@
     <div class="nk-menu" [style.background-color]="active? '#fff' : 'transparent'">
       <div class="container">
         <div class="row menu-nav">
-          <div class="col-1 ">
-            <div class="nav justify-content-start logo-img">
-              <a href="#">
-                <img [src]="active ? 'assets/images/logo.svg' : 'assets/images/logo-light.svg' " alt="logo.svg">
-              </a>
-            </div>
-          </div>
 
-          <div class="col-11 menu-right">
-            <ul class="nav justify-content-end">
-              <li>
-                <a pageScroll href="#about">About</a>
-              </li>
-              <li>
-                <a pageScroll href="#contact">Contact</a>
-              </li>
-              <li>
-                <a href="#blog" pageScroll >Blog</a>
-              </li>
-              <li>
-                <a  href="#" (click)="openRegisterForm()">Register</a>
-              </li>
-              <li>
-                <a href="#" (click)="openLoginForm()">Login</a>
-              </li>
-            </ul>
+          <div class="col-12 ">
+            <nav class="navbar navbar-expand-lg navbar-light">
+
+              <div class="nav logo-img">
+                <a href="#">
+                  <img [src]="active ? 'assets/images/logo.svg' : 'assets/images/logo-light.svg' " alt="logo.svg">
+                </a>
+              </div>
+
+
+
+              <button class="navbar-toggler slide-nav " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+
+              <div class="collapse navbar-collapse menu-right" id="navbarNav">
+                <ul class="navbar-nav nav" id="navbarNav">
+                  <li class="nav-item">
+                    <a pageScroll href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a pageScroll href="#contact">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#blog" pageScroll>Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" (click)="openRegisterForm()">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" (click)="openLoginForm()">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+
           </div>
 
         </div>
@@ -79,7 +92,7 @@
 
 
 
-<!-- --------------------------- -->
+<!-- START FEATURE--------------------------- -->
 <div class="bg-dark1 text-white">
   <div class="ft-h-100"></div>
   <div class="container">
@@ -140,153 +153,17 @@
   <div class="ft-h-100"></div>
 
 </div>
+<!-- END FEATURE-------------------------------------- -->
+<!-- START BEST PROJECT---------------------------------------- -->
 
 <app-best-project></app-best-project>
 
+<!-- END BEST PROJECT------------------------------------------------ -->
 <!-- ---------------------------------------- -->
 
-<!-- <div class="best-projects text-center">
 
 
-  <div class="project">
-    <div class="container">
-      <h2 class="project-h2">Best Project</h2>
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <p class="project-p">Donec orci sem, pretium ac dolor et, faucibus faucibus mauris. Etiam,pellentesque faucibus. Vestibulum gravida
-            volutpat ipsum non ultrices.
-          </p>
-        </div>
-      </div>
-      <div class="row project-list">
-        <div class=" col-md-6 col-lg-4 project-item ">
-          <a href="#" class="project-item-link"></a>
-          <div class="project-item-images item-image-1 "> </div>
-          <div class="project-item-text text-center">
-            <div>
-              <h2 class="project-item-text-h2">Vinyl Record</h2>
-              <div class="project-item-text-catelogy">Mockup</div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 project-item">
-
-          <a href="#" class="project-item-link"></a>
-          <div class="project-item-images item-image-2 "> </div>
-          <div class="project-item-text text-center">
-            <div>
-              <h2 class="project-item-text-h2">Vinyl Record</h2>
-              <div class="project-item-text-catelogy">Mockup</div>
-
-
-            </div>
-          </div>
-        </div>
-
-        <div class=" col-md-6 col-lg-4 project-item ">
-
-          <a href="# " class="project-item-link "></a>
-          <div class="project-item-images item-image-3 "> </div>
-          <div class="project-item-text text-center ">
-            <div>
-              <h2 class="project-item-text-h2">Vinyl Record</h2>
-              <div class="project-item-text-catelogy">Mockup</div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 project-item ">
-
-          <a href="# " class="project-item-link "></a>
-          <div class="project-item-images item-image-4 "> </div>
-          <div class="project-item-text text-center ">
-            <div>
-              <h2 class="project-item-text-h2">Vinyl Record</h2>
-              <div class="project-item-text-catelogy">Mockup</div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 project-item ">
-
-          <a href="# " class="project-item-link "></a>
-          <div class="project-item-images item-image-5 "> </div>
-          <div class="project-item-text text-center ">
-            <div>
-              <h2 class="project-item-text-h2">Vinyl Record</h2>
-              <div class="project-item-text-catelogy">Mockup</div>
-
-
-            </div>
-          </div>
-        </div>
-
-        <div class=" col-md-6 col-lg-4 project-item ">
-
-          <a href="# " class="project-item-link "></a>
-          <div class="project-item-images item-image-6 "> </div>
-          <div class="project-item-text text-center ">
-            <div>
-              <h2 class="project-item-text-h2">Vinyl Record</h2>
-              <div class="project-item-text-catelogy">Mockup</div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class=" col-md-6 col-lg-4 project-item ">
-
-          <a href="# " class="project-item-link "></a>
-          <div class="project-item-images item-image-7 "> </div>
-          <div class="project-item-text text-center ">
-            <div>
-              <h2 class="project-item-text-h2">Vinyl Record</h2>
-              <div class="project-item-text-catelogy">Mockup</div>
-
-
-            </div>
-          </div>
-        </div>
-
-        <div class=" col-md-6 col-lg-4 project-item ">
-
-          <a href="# " class="project-item-link "></a>
-          <div class="project-item-images item-image-8 "> </div>
-          <div class="project-item-text text-center ">
-            <div>
-              <h2 class="project-item-text-h2">Vinyl Record</h2>
-              <div class="project-item-text-catelogy">Mockup</div>
-
-
-            </div>
-          </div>
-        </div>
-
-        <div class=" col-md-6 col-lg-4 project-item ">
-
-          <a href="# " class="project-item-link "></a>
-          <div class="project-item-images item-image-9 "> </div>
-          <div class="project-item-text text-center ">
-            <div>
-              <h2 class="project-item-text-h2">Vinyl Record</h2>
-              <div class="project-item-text-catelogy">Mockup</div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <div class="bp-h-95"></div>
-  </div>
-
-</div> -->
-
-<!-- --------------------------------------------- -->
+<!--START REVIEW --------------------------------------------- -->
 <div class="bg-dark2 review">
   <div class="container">
     <div class="row justify-content-center">
@@ -301,7 +178,10 @@
 
 
 
-<!-- ----------------------------------------------------- -->
+<!--END REVIEW ----------------------------------------------------- -->
+<!--START PARTNER ----------------------------------------------------- -->
+
+
 <div class="carosel">
   <div class="container">
     <div class="partner-carosel">
@@ -473,20 +353,49 @@
 
       </div>
       <div class=" col-md-7 ">
-        <form action="" class=form-group>
+        <form action="" class=form-group [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <input type="text" name="" id="" class=form-control placeholder="Your Name"> </div>
+              <input type="text" class=form-control placeholder="Your Name" formControlName="yourname">
+              <div class="col alert alert-danger" role="alert" *ngIf="contactForm.get('yourname').hasError('required') &&
+              contactForm.get('yourname').touched">
+                This filed is required your name
+              </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <input type="email" name="" id="" class=form-control placeholder="Your Email"> </div>
+              <input type="email" class=form-control placeholder="Your Email" formControlName="youremail">
+              <div class="col alert alert-danger" role="alert" *ngIf="contactForm.get('youremail').hasError('required') &&
+              contactForm.get('youremail').touched">
+                This filed is required your email
+              </div>
+              <div class="col alert alert-danger" role="alert" *ngIf="contactForm.get('youremail').hasError('email') &&
+              contactForm.get('youremail').touched">
+                Your email is not correct!!! Example: info@exmple.com
+              </div>
+            </div>
+
+
+
 
           </div>
           <div class="form-h-30"></div>
 
-          <input type="text" name="title" id="" class="form-control" placeholder="Your Title">
+          <input type="text" name="title" class="form-control" placeholder="Your Title" formControlName="yourtitle">
+          <div class="col alert alert-danger" role="alert" *ngIf="contactForm.get('yourtitle').hasError('required') &&
+           contactForm.get('yourtitle').touched">
+            This filed is required your tittle
+          </div>
+          <div class="col alert alert-danger" role="alert" *ngIf="contactForm.get('yourtitle').hasError('minlength') &&
+          contactForm.get('yourtitle').touched">
+            Your title is too short
+          </div>
           <div class="form-h-30"></div>
 
-          <textarea name="" id="" rows="8" class="form-control" placeholder="Your Comment"></textarea>
+          <textarea rows="8" class="form-control" placeholder="Your Comment" formControlName="yourcomment"></textarea>
+          <div class="col alert alert-danger" role="alert" *ngIf="contactForm.get('yourcomment').hasError('required') &&
+          contactForm.get('yourcomment').touched">
+            This filed is required your comment
+          </div>
           <div class="form-h-30"></div>
 
           <button type="submit" class="btn btn-primary form-btn">SEND MESSAGE</button>
@@ -543,3 +452,4 @@
 
   </div>
 </footer>
+<!-- THE END ------------------------------------- -->

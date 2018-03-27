@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LoginFormComponent } from '../login-form/login-form.component';
 import { HostListener, Inject } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { RegisterFormComponent } from '../register-form/register-form.component';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+
 
 declare const window: any;
 
@@ -16,44 +18,55 @@ declare const window: any;
 
 export class ProjectComponent implements OnInit {
   active;
-  constructor(public dialog: MatDialog) {}
-
-
-    openLoginForm(): void {
-      const dialogRef = this.dialog.open(LoginFormComponent, {
-        width: '650px',
-        height: '400px',
-
-      });
-
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-
-      });
-
-    }
-    openRegisterForm(): void {
-      const registerFrom = this.dialog.open(RegisterFormComponent, {
-        width: '650px',
-        height: ' 400px',
-      });
-      registerFrom.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-      });
-    }
-
-
-
-
+  contactForm: FormGroup;
+  constructor(public dialog: MatDialog,
+    private fb: FormBuilder) { }
 
   ngOnInit() {
+   this.contactForm = this.fb.group({
+    yourname: ['', [Validators.required, ] ],
+    youremail: ['', [ Validators.required, Validators.email] ],
+    yourtitle: ['', [Validators.required, Validators.minLength(20)] ],
+    yourcomment: ['', Validators.required]
+   });
   }
+  onSubmit() { }
+
+
+  openLoginForm(): void {
+    const dialogRef = this.dialog.open(LoginFormComponent, {
+      width: '650px',
+      height: '400px',
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+
+    });
+
+  }
+  openRegisterForm(): void {
+    const registerFrom = this.dialog.open(RegisterFormComponent, {
+      width: '650px',
+      height: ' 400px',
+    });
+    registerFrom.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+
+
+
+
+
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
 
     const number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (number < 100) {
+    if (number < 60) {
       this.active = false;
     } else if (number > 200) {
       this.active = true;

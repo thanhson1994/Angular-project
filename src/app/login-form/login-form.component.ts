@@ -1,6 +1,7 @@
 import { Component, OnInit, style, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 export function forbiddenUsername(users = []) {
   return (c: AbstractControl) => {
     return (users.includes(c.value)) ? {
@@ -27,7 +28,7 @@ export class LoginFormComponent implements OnInit {
 
   form: FormGroup;
   constructor(private fb: FormBuilder,
-    dialog: MatDialog,
+    private dialog: MatDialog,
     public dialogRef: MatDialogRef<LoginFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
@@ -52,11 +53,12 @@ export class LoginFormComponent implements OnInit {
   onSuccess(): void {
 
     this.dialogRef.close();
-    // const dialogRef = this.dialog.open(LoginSuccesComponent, {
-    //   width: '400px',
-    //   height: '200px',
 
-    // });
+    const dialogRef = this.dialog.open(LoginSuccesComponent, {
+      width: '400px',
+      height: '200px',
+
+    });
 
 
   }
@@ -68,6 +70,7 @@ export class LoginFormComponent implements OnInit {
   selector: 'app-login-succes',
   template: '<h2>Login Successfully</h2>',
 
+
 })
 export class LoginSuccesComponent {
   public dialogRef: MatDialogRef<LoginSuccesComponent>;
@@ -75,10 +78,3 @@ export class LoginSuccesComponent {
 
 }
 
-
-
-// @Component({
-//   selector : 'app-login-succes',
-//   templateUrl: '<h2> BẠN ĐÃ ĐĂNG NHẬP THÀNH CÔNG</h2>',
-//   styleUrls: ['./login-form.component.scss']
-// })

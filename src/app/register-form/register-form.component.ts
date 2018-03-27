@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+
+
 export function forbiddenUsername(users = []) {
   return (c: AbstractControl) => {
 return (users.includes(c.value)) ? {
@@ -23,26 +25,26 @@ export function comparePassword(c: AbstractControl) {
 })
 export class RegisterFormComponent implements OnInit {
 
-  form: FormGroup;
+  formRegister: FormGroup;
   constructor(private fb: FormBuilder) { }
   isSpecial: boolean;
 
   ngOnInit() {
-    this.form = this.fb.group({
+    this.formRegister = this.fb.group({
       username: ['', [Validators.required, Validators.email , forbiddenUsername(['admin', 'manager'])]],
       pw: this.fb.group({
-        password: ['', Validators.required],
-        confirmPassword: ['', Validators.required]
+        password: ['', [Validators.required, Validators.minLength(6)]]  ,
+        confirmPassword: ['', Validators.required ]
       }, {
         validator: comparePassword
       })
     });
   }
   onSubmit() {
-    if (this.form.value.password === this.form.value.confirmPassword) {
+    if (this.formRegister.value.password === this.formRegister.value.confirmPassword) {
       this.isSpecial = true;
       // this.isSpecial = !this.isSpecial;
-    console.log(this.form);
+    console.log(this.formRegister);
     }
 
   }

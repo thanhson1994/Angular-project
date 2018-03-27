@@ -24,7 +24,7 @@ import {LoginSuccesComponent } from './login-form/login-form.component';
     RegisterFormComponent,
     LoginSuccesComponent
   ],
-  entryComponents: [ LoginFormComponent, RegisterFormComponent ],
+  entryComponents: [ LoginFormComponent, RegisterFormComponent, LoginSuccesComponent ],
   imports: [
     BrowserModule,
     FormsModule,

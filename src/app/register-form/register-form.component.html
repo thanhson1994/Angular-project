@@ -1,18 +1,24 @@
-
 <div class="form-title text-center">
   <h3> ACCOUNT REGISTER </h3>
 </div>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3">
+<form [formGroup]="formRegister" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3">
   <div class="form-group row">
     <label class="col">
       Email
       <input type="email" class="form-control" formControlName="username">
     </label>
   </div>
-
-  <div class="col alert alert-danger" role="alert"  *ngIf="form.hasError('invalidusername', ['username']) &&
-      form.get('username').touched">
+  <div class="col alert alert-danger" role="alert" *ngIf="formRegister.get('username').hasError('required') &&
+  formRegister.get('username').touched">
+    This filed is required an email
+  </div>
+  <div class="col alert alert-danger" role="alert" *ngIf="formRegister.get('username').hasError('email') &&
+      formRegister.get('username').touched">
+    It's not an email. Example: example@gmai.com
+  </div>
+  <div class="col alert alert-danger" role="alert" *ngIf="formRegister.hasError('invalidusername', ['username']) &&
+  formRegister.get('username').touched">
     Invalid Username!
   </div>
   <div formGroupName="pw">
@@ -22,19 +28,29 @@
         <input type="password" class="form-control" formControlName="password">
       </label>
     </div>
+    <div class="col alert alert-danger" role="alert" *ngIf="formRegister.get('pw.password').hasError('required') &&
+    formRegister.get('pw.password').touched">
+    This filed is required password
+    </div>
+
+    <div class="col alert alert-danger" role="alert" *ngIf="formRegister.get('pw.password').hasError('minlength') &&
+        formRegister.get('pw.password').touched">
+      Your password is too short!
+    </div>
+
     <div class="form-group row">
       <label class="col">
         Confirm Password
         <input type="password" class="form-control" formControlName="confirmPassword">
       </label>
     </div>
-    <div class="col alert alert-danger" role="alert"  *ngIf="form.hasError('passwordnotmatch', ['pw']) &&
-      form.get('pw').touched && isSpecial">
+  </div>
+  <div class="col alert alert-danger" role="alert" *ngIf="formRegister.hasError('passwordnotmatch', ['pw']) &&
+    formRegister.get('pw').touched">
     Password does not match
   </div>
-  </div>
   <div class="form-group">
-    <button class="btn btn-info" type="submit">Submit</button>
+    <button class="btn btn-info" type="submit" [disabled]="formRegister.invalid">Submit</button>
 
   </div>
 </form>

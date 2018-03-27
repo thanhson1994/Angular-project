@@ -9,10 +9,12 @@
       <input type="email" class="form-control" formControlName="username">
     </label>
   </div>
-  <!-- <div class="col alert alert-danger" role="alert" *ngIf="form.get('username').hasError('required')) &&
-      form.get('username').touched">
+
+  <div class="col alert alert-danger" role="alert" *ngIf="form.get('username').hasError('required') &&
+  form.get('username').touched">
     This filed is required an email
-  </div> -->
+  </div>
+
 
 
   <div class="col alert alert-danger" role="alert" *ngIf="form.hasError('invalidusername', ['username']) &&
@@ -32,9 +34,14 @@
       <input type="password" class="form-control" formControlName="password">
     </label>
   </div>
-  <div class="col alert alert-danger" role="alert" *ngIf="form.get('password').hasError('minLength') &&
+  <div class="col alert alert-danger" role="alert" *ngIf="form.get('password').hasError('required') &&
+  form.get('password').touched">
+    This filed is required password
+  </div>
+
+  <div class="col alert alert-danger" role="alert" *ngIf="form.get('password').hasError('minlength') &&
       form.get('password').touched">
-    Your password is too short!
+    Your password is too short!!!
   </div>
 
 
