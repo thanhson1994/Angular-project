@@ -56,7 +56,7 @@ export class LoginFormComponent implements OnInit {
 
     const dialogRef = this.dialog.open(LoginSuccesComponent, {
       width: '400px',
-      height: '200px',
+      height: '100px',
 
     });
 
@@ -68,7 +68,7 @@ export class LoginFormComponent implements OnInit {
 
 @Component({
   selector: 'app-login-succes',
-  template: '<h2>Login Successfully</h2>',
+  template: '<h2>LOGIN SUCCESSFULLY</h2>',
 
 
 })

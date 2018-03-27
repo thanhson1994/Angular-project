@@ -41,12 +41,12 @@ export class RegisterFormComponent implements OnInit {
     });
   }
   onSubmit() {
-    if (this.formRegister.value.password === this.formRegister.value.confirmPassword) {
-      this.isSpecial = true;
-      // this.isSpecial = !this.isSpecial;
-    console.log(this.formRegister);
-    }
-
+    // if (this.formRegister.value.password === this.formRegister.value.confirmPassword) {
+    //   this.isSpecial = true;
+    //   // this.isSpecial = !this.isSpecial;
+    // console.log(this.formRegister);
+    // }
+this.formRegister.reset();
   }
 
 }

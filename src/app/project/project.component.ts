@@ -17,20 +17,41 @@ declare const window: any;
 })
 
 export class ProjectComponent implements OnInit {
+  name: string;
+  email: '';
+  title: '';
+  comment: '';
   active;
   contactForm: FormGroup;
   constructor(public dialog: MatDialog,
     private fb: FormBuilder) { }
 
   ngOnInit() {
-   this.contactForm = this.fb.group({
-    yourname: ['', [Validators.required, ] ],
-    youremail: ['', [ Validators.required, Validators.email] ],
-    yourtitle: ['', [Validators.required, Validators.minLength(20)] ],
-    yourcomment: ['', Validators.required]
-   });
+    this.contactForm = this.fb.group({
+      yourname: ['', [Validators.required, ]],
+      youremail: ['', [Validators.required, Validators.email]],
+      yourtitle: ['', [Validators.required, Validators.minLength(20)]],
+      yourcomment: ['', Validators.required]
+    });
   }
-  onSubmit() { }
+  onSubmit() {
+    this.name = this.contactForm.value.yourname.toString();
+    this.email = this.contactForm.value.youremail;
+    this.title = this.contactForm.value.yourtitle;
+    this.comment = this.contactForm.value.yourcomment;
+    this.contactForm.reset();
+
+
+
+  }
+  rebuildForm() {
+    setTimeout(() => {
+
+      this.contactForm.patchValue({
+        yourname : `${this.name}` , youremail: `${this.email}` , yourtitle: `${this.title}` , yourcomment: `${this.comment}` });
+
+    }, 1000);
+  }
 
 
   openLoginForm(): void {
