@@ -50,7 +50,7 @@ export class ProjectComponent implements OnInit {
       this.contactForm.patchValue({
         yourname : `${this.name}` , youremail: `${this.email}` , yourtitle: `${this.title}` , yourcomment: `${this.comment}` });
 
-    }, 1000);
+    }, 100);
   }
 
 

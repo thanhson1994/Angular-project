@@ -8,14 +8,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class BestProjectComponent implements OnInit {
   bestProject = [{ h2: 'Vinyl Record', div: 'Mockup', img: { url: 'assets/images/portfolio-7-sm.jpg' }  },
-  { h2: 'Vinyl Record', div: 'Mockup', img: { url: 'assets/images/portfolio-4-sm.jpg' } },
-  { h2: 'Vinyl Record', div: 'Mockup', img: { url: 'assets/images/portfolio-5-sm.jpg' }  },
-  { h2: 'Vinyl Record', div: 'Mocku', img: { url: 'assets/images/portfolio-9-sm.jpg' }  },
-  { h2: 'Vinyl Record', div: 'Mockp', img: { url: 'assets/images/portfolio-3-sm.jpg' }  },
-  { h2: 'Vinyl Record', div: 'Mokup', img: { url: 'assets/images/portfolio-8-sm.jpg' }  },
-  { h2: 'Vinyl Record', div: 'Mckup', img: { url: 'assets/images/portfolio-2-sm.jpg' }  },
-  { h2: 'Vinyl Record', div: 'ockup', img: { url: 'assets/images/portfolio-6-sm.jpg' }  },
-  { h2: 'Vinyl Record', div: 'Mockup', img: { url: 'assets/images/portfolio-12-sm.jpg' }  }
+  { h2: 'Modern T-Shirt', div: 'Print', img: { url: 'assets/images/portfolio-4-sm.jpg' } },
+  { h2: 'Minimal Bag', div: 'Branding', img: { url: 'assets/images/portfolio-5-sm.jpg' }  },
+  { h2: 'Clean & Groovy', div: 'Design', img: { url: 'assets/images/portfolio-9-sm.jpg' }  },
+  { h2: 'Minimal Mobile App', div: 'Design', img: { url: 'assets/images/portfolio-3-sm.jpg' }  },
+  { h2: 'White T-Shirt', div: 'Print', img: { url: 'assets/images/portfolio-8-sm.jpg' }  },
+  { h2: 'Business Card', div: 'Branding', img: { url: 'assets/images/portfolio-2-sm.jpg' }  },
+  { h2: 'Heja Stockholm', div: 'Photography', img: { url: 'assets/images/portfolio-6-sm.jpg' }  },
+  { h2: 'Paper Bag', div: 'Photography', img: { url: 'assets/images/portfolio-12-sm.jpg' }  }
   ];
   constructor(private sanitizer: DomSanitizer) { }
 

@@ -11,7 +11,7 @@
   </div>
   <div class="col alert alert-danger" role="alert" *ngIf="formRegister.get('username').hasError('required') &&
   formRegister.get('username').touched">
-    This filed is required an email
+    This field is required an email
   </div>
   <div class="col alert alert-danger" role="alert" *ngIf="formRegister.get('username').hasError('email') &&
       formRegister.get('username').touched">
@@ -30,7 +30,7 @@
     </div>
     <div class="col alert alert-danger" role="alert" *ngIf="formRegister.get('pw.password').hasError('required') &&
     formRegister.get('pw.password').touched">
-    This filed is required password
+    This field is required password
     </div>
 
     <div class="col alert alert-danger" role="alert" *ngIf="formRegister.get('pw.password').hasError('minlength') &&

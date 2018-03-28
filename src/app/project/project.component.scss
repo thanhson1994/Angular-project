@@ -1,11 +1,24 @@
-@media only screen and (min-width: 992px) {
-  .col-lg-3 {
-    float: left;
-    width: 25%;
+@media only screen and (max-width: 767px) {
+.mr-b-30 {
+  margin-bottom: 30px;
+}
+}
+@media only screen and (max-width: 992px){
+  .set-height {
+    height: 166px;
+  }
+  .set-mr-b {
+    margin-bottom: 30px
   }
 }
+@media only screen and (max-width: 767px){
+  .set-height {
+    height: 332px;
+  }
 
+}
 
+// Start header ------------------------
 
 .menu-nav {
   height: 101px;
@@ -50,7 +63,7 @@ right: 0;
 }
 
 .header-background {
-  height: 699px;
+  min-height: 700px;
   position: relative;
   background: url(/assets/images/home-7.jpg);
   width: 100%;
@@ -109,7 +122,7 @@ right: 0;
   height: 53px;
   margin-top: 35px;
   margin-right: 10px;
-  color: #fff; // display: inline-block;
+  color: #fff;
   font-size: .96rem;
   font-weight: 500;
   line-height: 1.2;
@@ -130,9 +143,9 @@ right: 0;
   border: 1px solid #444444;
 }
 
-// ------------------------------------
+//Start About ------------------------------------
 .bg-white {
-  width: 100%; // height: 421px;
+  width: 100%;
 }
 
 .bg-white .display-4 {
@@ -147,6 +160,7 @@ right: 0;
 .bg-white p {
   text-align: center;
   margin-top: 20px;
+  color: #5f5f5f;
 }
 
 .bg-white img {
@@ -154,16 +168,11 @@ right: 0;
   margin-bottom: 100px;
 }
 
-// .bg-white img {
-//     text-align: center!important;
-//     margin-left: 265px;
-//     margin-top: 25px;
-// }
-// ---------------------------------
+//Start Feature  ---------------------------------
 .bg-dark1 {
   background: url(/assets/images/bg-pattern.jpg);
   background-size: 100%;
-  width: 100%; // height: 241px;
+  width: 100%;
   position: relative;
 }
 
@@ -174,7 +183,7 @@ right: 0;
 
 .feature {
   color: #fff;
-  min-height: 50px; // padding-top: 30px;
+  min-height: 50px;
 }
 
 .feature .ft-icon {
@@ -182,7 +191,7 @@ right: 0;
   font-size: 50px;
   width: 50px;
   height: 50px;
-  line-height: 50px; // margin-top: 3px;
+  line-height: 50px;
 }
 
 .feature .ft-content {
@@ -200,23 +209,11 @@ right: 0;
   font-size: 15px;
 }
 
-// .bg-dark1 .ft-h-100 {
-//     height: 100px;
-// }
-// .bg-dark1 div {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-// }
-// -------------------------------------------
-
-// -----------------------------------------
+//Start Review -----------------------------------------
 .bg-dark2 {
   background: url(/assets/images/bg-pattern.jpg);
   background-size: 100%;
-  width: 100%; // height: 500px;
+  width: 100%;
   position: relative;
 }
 
@@ -242,7 +239,7 @@ right: 0;
   margin-bottom: 75px;
 }
 
-// -----------------------------------------
+// Start Carosel  -----------------------------------------
 .partner-carosel {
   padding: 20px 0;
 }
@@ -255,7 +252,7 @@ right: 0;
   width: 100%;
 }
 
-// ----------------------------------------------------
+//Start Blogs  ----------------------------------------------------
 .blogs {
   background-color: #fafafa;
 }
@@ -291,18 +288,18 @@ right: 0;
 }
 
 .blog-post-button a {
+  background-color: #252525;
   position: absolute;
   bottom: 8px;
   left: 8px;
   display: block;
   padding: 6px 15px;
-  background-color: #252525;
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
   font-size: 12px;
   font-weight: 500;
-  text-align: center;
   transition: background-color 0.5s;
 }
 
@@ -347,7 +344,7 @@ right: 0;
   height: 200px;
 }
 
-// Start Contact Info
+// Start Contact Info------------------------------
 .contact-info {
   background-color: #e2e2e2;
 }
@@ -453,4 +450,6 @@ right: 0;
 
 .footer-text {
   margin-top: -35px;
+  color: #5f5f5f;
+  font-size: .95rem;
 }

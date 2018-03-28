@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 export function forbiddenUsername(users = []) {
@@ -26,7 +27,10 @@ export function comparePassword(c: AbstractControl) {
 export class RegisterFormComponent implements OnInit {
 
   formRegister: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private dialog: MatDialog,
+    public dialogRef: MatDialogRef<RegisterFormComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
   isSpecial: boolean;
 
   ngOnInit() {
@@ -47,6 +51,8 @@ export class RegisterFormComponent implements OnInit {
     // console.log(this.formRegister);
     // }
 this.formRegister.reset();
+this.dialogRef.close();
+
   }
 
 }

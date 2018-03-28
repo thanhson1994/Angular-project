@@ -95,13 +95,13 @@
 <!-- START FEATURE--------------------------- -->
 <div class="bg-dark1 text-white">
   <div class="ft-h-100"></div>
-  <div class="container">
+  <div class="container set-height">
     <div class="row">
 
-      <div class=" col-md-6 col-lg-3">
+      <div class=" col-md-6 col-lg-3 set-mr-b ">
         <div class="feature">
           <div class="ft-icon">
-            <span class="pe-7s-portfolio"></span>
+            <i class="fas fa-briefcase"></i>
           </div>
           <div class="ft-content">
             <div class="ft-content-number">548</div>
@@ -110,10 +110,10 @@
         </div>
       </div>
 
-      <div class=" col-md-6 col-lg-3">
+      <div class=" col-md-6 col-lg-3 set-mr-b ">
         <div class="feature">
           <div class="ft-icon">
-            <span class="pe-7s-clock"></span>
+            <i class="far fa-clock"></i>
           </div>
           <div class="ft-content">
             <div class="ft-content-number">1465</div>
@@ -122,10 +122,10 @@
         </div>
       </div>
 
-      <div class=" col-md-6 col-lg-3">
+      <div class=" col-md-6 col-lg-3 set-mr-b">
         <div class="feature">
           <div class="ft-icon">
-            <span class="pe-7s-star"></span>
+            <i class="far fa-star"></i>
           </div>
           <div class="ft-content">
             <div class="ft-content-number">612</div>
@@ -134,10 +134,10 @@
         </div>
       </div>
 
-      <div class=" col-md-6 col-lg-3">
+      <div class=" col-md-6 col-lg-3 ">
         <div class="feature">
           <div class="ft-icon">
-            <span class="pe-7s-like"></span>
+            <i class="far fa-heart"></i>
           </div>
           <div class="ft-content">
             <div class="ft-content-number">735</div>
@@ -355,18 +355,18 @@
       <div class=" col-md-7 ">
         <form action="" class=form-group [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="mr-b-30 col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <input type="text" class=form-control placeholder="Your Name" formControlName="yourname">
               <div class="col alert alert-danger" role="alert" *ngIf="contactForm.get('yourname').hasError('required') &&
               contactForm.get('yourname').touched">
-                This filed is required your name
+                This field is required your name
               </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <input type="email" class=form-control placeholder="Your Email" formControlName="youremail">
               <div class="col alert alert-danger" role="alert" *ngIf="contactForm.get('youremail').hasError('required') &&
               contactForm.get('youremail').touched">
-                This filed is required your email
+                This field is required your email
               </div>
               <div class="col alert alert-danger" role="alert" *ngIf="contactForm.get('youremail').hasError('email') &&
               contactForm.get('youremail').touched">
@@ -383,7 +383,7 @@
           <input type="text" name="title" class="form-control" placeholder="Your Title" formControlName="yourtitle">
           <div class="col alert alert-danger" role="alert" *ngIf="contactForm.get('yourtitle').hasError('required') &&
            contactForm.get('yourtitle').touched">
-            This filed is required your tittle
+            This field is required your tittle
           </div>
           <div class="col alert alert-danger" role="alert" *ngIf="contactForm.get('yourtitle').hasError('minlength') &&
           contactForm.get('yourtitle').touched">
@@ -394,12 +394,12 @@
           <textarea rows="8" class="form-control" placeholder="Your Comment" formControlName="yourcomment"></textarea>
           <div class="col alert alert-danger" role="alert" *ngIf="contactForm.get('yourcomment').hasError('required') &&
           contactForm.get('yourcomment').touched">
-            This filed is required your comment
+            This field is required your comment
           </div>
           <div class="form-h-30"></div>
 
           <button type="submit" class="btn btn-primary form-btn">SEND MESSAGE</button>
-          <button type="submit" class="btn btn-primary form-btn" (click)="rebuildForm()">FIX MESSAGE</button>
+          <button type="submit" class="btn btn-primary form-btn" (click)="rebuildForm()">UPDATE MESSAGE</button>
 
         </form>
 
